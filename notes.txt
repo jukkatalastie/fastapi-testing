@@ -1,0 +1,22 @@
+
+@asadurrahman1681
+2 months ago
+09:38:05 for the vote model and new pydantic updates, it can be done in the following way,
+
+make sure to import these:
+
+from typing import Annotated
+from pydantic import Field
+
+class Vote(BaseModel):
+          post_id: int
+          dir: Annotated[int, Field(ge=0, le=1)]
+
+
+According to pydantic, conint returns a new type which cause issues with static type checkers, while, Annotated allows to add metadata (like constraints) to existing types, thus making it more type-safe and clear. 
+
+Field(ge=0, le=1): this specifies that dir must be greater than or equal to 0 (inclusive), and less than or equal to 1 (inclusive).
+
+Cheers
+
+
