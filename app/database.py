@@ -9,10 +9,10 @@ SQLALCHEMY_DATABASE_URL = f'postgresql+psycopg://{settings.database_username}:{s
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
+
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
-
 
 # SqlAlchemy dependency
 def get_db():

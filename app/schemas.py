@@ -28,7 +28,7 @@ class UserLogin(BaseModel):
     email: EmailStr
     password: str
 
-class Post(BaseModel):
+class Post(PostBase):
     model_config = ConfigDict(from_attributes=True)
     id: int
     created_at: datetime
