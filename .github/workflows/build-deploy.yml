@@ -82,4 +82,4 @@ jobs:
             cd app/src
             git pull
             sudo systemctl restart api
-            echo ${{vars.PROD_PASSWORD}} | sudo -S systemctl restart api
+            echo ${{vars.PROD_PASSWORD}} | sudo -S systemctl restart fastapi-test
