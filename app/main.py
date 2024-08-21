@@ -23,7 +23,7 @@ app.add_middleware(
 
 @app.get("/")
 def root():
-    return {"message": "Pushing out to ubuntu"}
+    return {"message": "Pushing out to ubuntu yippii"}
 
 app.include_router(post.router)
 app.include_router(user.router)
